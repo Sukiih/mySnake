@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Waleska Silva">
+    <meta name="keywords" content="Snake Game, Juego Snake, Juego, JavaScript, web game">
+    <meta name="description" content="Juega al clasico Snake, controla la serpiente con las flechas para alimentarla. Juega con tus amigos y obten puntos.">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div id="score">Puntaje: 0</div>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            }
+
+        body {
+                display: flex;
+                flex-direction: column-reverse;
+                gap: 20px;
+                justify-content: center; 
+                align-items: center; 
+                background-image: url('https://i.pinimg.com/736x/5b/25/fd/5b25fd99a5b9b81d61ec2fe37cec958c.jpg');
+            }
+
+        #score {
+                background-color: aliceblue;
+                
+                width: fit-content;
+                text-align: center;
+                font-size: 20px;
+                margin-top: 50px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+    </style>
+
+
+
+    <script src="snake.js"></script>
+</body>
+</html>
