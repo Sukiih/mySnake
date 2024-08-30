@@ -149,6 +149,49 @@ document.addEventListener('DOMContentLoaded', (event) => {
         updateInterval = setInterval(update, speed);
     }
 
+    //mobile stuff
+
+    let startX, startY;
+
+    document.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+    });
+    
+    document.addEventListener('touchend', (e) => {
+        const touch = e.changedTouches[0];
+        const endX = touch.clientX;
+        const endY = touch.clientY;
+    
+        const deltaX = endX - startX;
+        const deltaY = endY - startY;
+    
+        // Determine the direction of the swipe
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            // Horizontal swipe
+            if (deltaX > 30 && dx === 0) { 
+                dx = 10; 
+                dy = 0; 
+            }
+            if (deltaX < -30 && dx === 0) { 
+                dx = -10; 
+                dy = 0; 
+            }
+        } else {
+            // Vertical swipe
+            if (deltaY > 30 && dy === 0) { 
+                dx = 0; 
+                dy = 10; 
+            }
+            if (deltaY < -30 && dy === 0) { 
+                dx = 0; 
+                dy = -10; 
+            }
+        }
+    });
+
+
     // Funcion para actualizar la serpiente
     function update() {
         advanceSnake();
